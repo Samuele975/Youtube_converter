@@ -1,7 +1,7 @@
 import youtube_dl
 import tkinter
 
-version = '1.0'             # this is version
+version = '1.1'             # this is version
 
 window = tkinter.Tk()                   # creation window
 window.geometry('600x400')              #
@@ -21,7 +21,8 @@ version.pack(side='right', anchor='s')                                   #
 
 
 def converter(url):                                   # function that request URL and convert and download the mp3 sound
-    audiod = youtube_dl.YoutubeDL({'format': 'bestaudio'})
+    audiod = youtube_dl.YoutubeDL({'format': 'bestaudio', 'postprocessors': [{ 'key': 'FFmpegExtractAudio', 'preferredcodec': 'mp3', 'preferredquality': '192', }]})
+
     try:
         audiod.extract_info(url)
 
@@ -49,7 +50,7 @@ button.config(text='Converti e scarica', fg='white', bg='black')                
 button.pack(padx=20)                                                                               #
 button.place(x=230, y=202)                                                                         #
 
-author = tkinter.Label(master=window, text='Created by  Samuele Valiante', font=13, bg='black')  # creation author label
+author = tkinter.Label(master=window, text='Created by  SV975', font=13, bg='black')  # creation author label
 author.pack(side='left', anchor='s')                                                             #
 
 window.mainloop()
