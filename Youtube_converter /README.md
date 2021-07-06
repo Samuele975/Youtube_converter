@@ -1,6 +1,0 @@
-Questo è un semplice programma che richiede un URL del video di YouTube e lo converte in un file audio.
- Il file audio finale è memorizzato in questa directory.
- PS Per incollare un URL nell'etichetta premere CTRL+V
-
- Sviluppato da Valiante Samuele
- 9/06/2021
